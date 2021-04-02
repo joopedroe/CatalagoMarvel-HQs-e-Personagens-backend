@@ -18,5 +18,11 @@ module.exports =
         return res.json(comic);
     },
     
+    async index(req, res){
+        const id = req.params.id_user;
+        const list_comics = await Comic.find({id_user:id}).sort({createdAt: 'asc'});
+        return res.json(list_comics);
+
+    },
     
 };
