@@ -25,4 +25,9 @@ module.exports =
 
     },
     
+    async delete(req, res){
+        const id = req.params.id_comic;
+        await Comic.deleteOne({_id:id});
+        return res.json({ok:true});
+    },
 };
