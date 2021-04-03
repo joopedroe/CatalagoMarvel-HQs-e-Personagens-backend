@@ -17,5 +17,12 @@ module.exports =
         })
         return res.json(character);
     },
+
+    async index(req, res){
+        const id = req.params.id_user;
+        const list_character = await Character.find({id_user:id}).sort({createdAt: 'asc'});
+        return res.json(list_character);
+
+    },
     
 };
