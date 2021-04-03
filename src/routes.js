@@ -2,6 +2,7 @@ const {Router} =require('express');
 const UserController = require('./controllers/user-controller');
 const authController = require('./controllers/auth-controller.js');
 const comicController = require('./controllers/comic-controller')
+const characterController =require('./controllers/character-controller')
 
 const routes = new Router();
 
@@ -11,4 +12,5 @@ routes.put('/atualizar/usuario',UserController.updateUser);
 routes.post('/comic/adicionar',comicController.add_comic);
 routes.get('/comic/favoritos/:id_user',comicController.index);
 routes.delete('/comic/remove/:id_comic',comicController.delete);
+routes.post('/character/adicionar',characterController.add_character);
 module.exports = routes
