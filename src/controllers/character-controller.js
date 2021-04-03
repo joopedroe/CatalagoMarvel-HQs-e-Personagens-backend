@@ -24,5 +24,10 @@ module.exports =
         return res.json(list_character);
 
     },
+    async delete(req, res){
+        const id = req.params.id_character;
+        await Character.deleteOne({_id:id});
+        return res.json({ok:true});
+    },
     
 };

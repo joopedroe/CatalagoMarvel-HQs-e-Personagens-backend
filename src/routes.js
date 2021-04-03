@@ -14,4 +14,5 @@ routes.get('/comic/favoritos/:id_user',comicController.index);
 routes.delete('/comic/remove/:id_comic',comicController.delete);
 routes.post('/character/adicionar',characterController.add_character);
 routes.get('/character/favoritos/:id_user',characterController.index);
+routes.delete('/character/remove/:id_character',characterController.delete);
 module.exports = routes
