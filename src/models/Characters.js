@@ -1,34 +1,38 @@
 const model = require('mongoose');
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
 
-const CharacterSchema = new Schema({
-    id:{
-        type: Number,
-        required:true,
+const { Schema } = mongoose;
+
+const CharacterSchema = new Schema(
+  {
+    id: {
+      type: Number,
+      required: true,
     },
-    name:{
-        type: String,
-        required:true,
+    name: {
+      type: String,
+      required: true,
     },
-    description:{
-        type: String,
-        required:false,
+    description: {
+      type: String,
+      required: false,
     },
-    imageURL:{
-        type:String,
-        required:true,
+    imageURL: {
+      type: String,
+      required: true,
     },
-    type_image:{
-        type: String,
-        required:true,
+    type_image: {
+      type: String,
+      required: true,
     },
-    id_user:{ 
-        type: Schema.Types.ObjectId, ref: 'User' 
+    id_user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
     },
-   
-},{
-    timestamps:true
-},);
+  },
+  {
+    timestamps: true,
+  }
+);
 
 module.exports = mongoose.model('Character', CharacterSchema);
