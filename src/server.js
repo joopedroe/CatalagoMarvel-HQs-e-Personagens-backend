@@ -1,8 +1,10 @@
 const mongoose = require('mongoose');
 const app = require('./app');
-const auth = require('./config/auth.json');
 
-mongoose.connect(auth['secret-db'], {
+require("dotenv").config()
+
+mongoose.connect(process.env.SECRET_DB, {
   useNewUrlParser: true,
-});
-app.listen(3333);
+  
+}); 
+app.listen(process.env.PORT || 3333);
