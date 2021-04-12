@@ -98,7 +98,7 @@ module.exports = {
   },
   async getUser(req, res){
     await modelUser
-          .findById({ _id: req.body.id })
+          .findById({ _id: req.params.id })
           .then((user) => {
             if (user) {
               res.json(user);
