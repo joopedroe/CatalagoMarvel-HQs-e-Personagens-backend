@@ -39,7 +39,7 @@ Executa o aplicativo no modo de desenvolvimento.
 - [x] Editar minhas informações;
 - [x] Listagem e detalhes das comics, podendo favoritar ou desfavoritar;
 - [x] Listagem e detalhes dos characters, podendo favoritar ou desfavoritar;
-- [x] istagem e detalhes dos characters e comics favoritos.
+- [x] Listagem e detalhes dos characters e comics favoritos.
 
 ## Deploy
 
