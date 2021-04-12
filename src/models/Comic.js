@@ -3,28 +3,31 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const UserSchema = new Schema(
+const ComicSchema = new Schema(
   {
-    name: {
+    id: {
+      type: Number,
+      required: true,
+    },
+    title: {
       type: String,
       required: true,
     },
-    email: {
+    description: {
+      type: String,
+      required: false,
+    },
+    imageURL: {
       type: String,
       required: true,
     },
-    username: {
+    type_image: {
       type: String,
       required: true,
     },
-    password: {
-      type: String,
-      required: true,
-    },
-    isAdmin: {
-      type: Boolean,
-      required: true,
-      default: false,
+    id_user: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
     },
   },
   {
@@ -32,4 +35,4 @@ const UserSchema = new Schema(
   }
 );
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model('Comic', ComicSchema);
