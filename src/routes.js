@@ -11,6 +11,7 @@ routes.post('/login', authController.Autenticacao);
 routes.post('/novo/usuario', UserController.newUser);
 routes.use(authMiddleware);
 routes.put('/atualizar/usuario', UserController.updateUser);
+routes.get('/get/usuario', UserController.getUser);
 routes.post('/comic/adicionar', comicController.add_comic);
 routes.get('/comic/favoritos/:id_user', comicController.index);
 routes.delete('/comic/remove/:id_comic', comicController.delete);

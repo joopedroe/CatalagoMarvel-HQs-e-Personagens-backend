@@ -96,4 +96,16 @@ module.exports = {
       );
     });
   },
+  async getUser(req, res){
+    await modelUser
+          .findById({ _id: req.body.id })
+          .then((user) => {
+            if (user) {
+              res.json(user);
+            }
+            else{
+              res.json({ sucess: false, message: err, statusCode: 500 })
+            }
+          })
+  },
 };
